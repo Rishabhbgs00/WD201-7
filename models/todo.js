@@ -18,8 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     markAsCompleted() {
       return this.update({ completed: true });
     }
-    static async getTodos() {
-      return await this.findAll();
+
+   static gettodos(){
+      return this.findAll({order:[["id","ASC"]]});
     }
   }
   Todo.init(
